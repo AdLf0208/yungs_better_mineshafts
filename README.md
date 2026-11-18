@@ -1,81 +1,68 @@
-# YUNG's Better Mineshafts for Horizon (partial: the generator and one vocabulary)
+# YUNG's Better Mineshafts — a Horizon port
 
-A port of **YUNG's Better Mineshafts 1.21.1-NeoForge-5.1.1** (mod id `bettermineshafts`, author
-**YUNGNICKYOUNG**, **LGPL-3.0-only**) to Minecraft Java **26.3** on Horizon's SDK
-`0b14f8acfd97fa2c750e42795249dcc981178ca4` (package format 6, `api = "0.2"`).
+**YUNG's Better Mineshafts** is a Minecraft mod. A long-awaited and much-needed Minecraft abandoned mineshaft overhaul!. This repository is a **port of it to [Horizon](https://github.com/horizon-rust/horizon)**, the Rust engine for Minecraft Java 26.3. It carries the complete source of the port plus the content files it ships, and installs as a single `.hmod` package.
 
-## What this package is
+Upstream: [YUNG-GANG/YUNGs-Better-Mineshafts](https://github.com/YUNG-GANG/YUNGs-Better-Mineshafts) — licence **LGPL-3.0-only**.
 
-The jar's worldgen data **and** the structure type it needs, in one native package:
+| | |
+|---|---|
+| Upstream mod | YUNG's Better Mineshafts ([source](https://github.com/YUNG-GANG/YUNGs-Better-Mineshafts)) |
+| Ported to | Horizon 0b14f8a, Minecraft Java 26.3, mod API `0.2` |
+| Package | `bettermineshafts.hmod` (install it with the Horizon launcher) |
+| Licence | **LGPL-3.0-only** — the upstream mod's licence; see [Licence and credit](#licence-and-credit) |
 
-- the **thirteen structure definitions** (`mineshaft_oak`, `_acacia`, `_desert`, `_dripstone`,
-  `_ice`, `_jungle`, `_lush`, `_mesa`, `_mushroom`, `_overgrown`, `_red_desert`, `_spruce`,
-  `_spruce_snowy`) with the jar's `biomes`, `step`, `spawn_overrides` and the per-variant
-  `config` (palette, randomizers, decoration chances), block states in 26.3's shape;
-- the **structure set** (`random_spread`, salt 593751784, spacing 1, separation 0,
-  `legacy_type_3`, frequency 0.003);
-- the **thirteen biome tags** they select on, the two **structure tags** (its own and
-  `minecraft:mineshaft`), and the three **lang files**, byte-identical;
-- the mod's **structure type in Rust** (`src/`): `bettermineshafts:mineshaft` now generates its own
-  geometry instead of being an unsupported type —
-  - a **vertical entrance**: 5×5 shaft from the surface, ladder, stone-brick doorway, legs;
-  - a **9×8×24 main corridor**: planks and randomized floor, fence supports under covered cells,
-    rails and powered rails, hanging lanterns, gravel piles, cobwebs, vines;
-  - **5×5×8 branch corridors** off the side walls, and **10×5×5 workstation rooms** with iron bars
-    and a crafting table;
-  - every variant builds from **its own carried palette** (oak, acacia, spruce, jungle, mesa,
-    desert, red desert, ice, mushroom, lush, dripstone, overgrown, snowy spruce);
-- `/bettermineshafts status`: the structure, its four required biomes (+3 optional) and a
-  deterministic probe's piece count.
+## What this port implements
 
-## What it does not do yet — read this before installing
+- **stairs, turns, layered intersections 4/5, ore deposits, zombie-villager rooms, side-room
+- **the terrain-driven surface tunnel** (`VerticalEntrance.determineDirection`, `:300-361`) — it
+- **biome decorations** (`snow`, `cactus`, `dead bush`, `mushroom`, `lush`, `dripstone`) — upstream
+- **minecarts, chests, furnaces, barrels** — they need entity/block-entity payloads whose exact NBT
+- **loot/torch on branch walls**: the torch placement is implemented as supports and cobwebs only;
+- **The in-game leg passes — what it does *not* yet cover.** The three legs are green (below), but
+- **Biome decorations:** `addBiomeDecorations` (`BetterMineshaftPiece.java:175-240`) places
+- **Corridor legs (`edge`/`inner`):** `BigTunnel.generateLegsVariant1/2` (`BigTunnel.java:253-369`)
 
-- **Proven in a real level, at the SDK pin** (`launcher@0.2.78`): `/place structure` writes the
-  entrance's ladder, the corridor's rails, the doorway's stone bricks and the walls' planks; the ice
-  variant builds from its own `packed_ice` palette. The unmodified Nightly refuses the id and writes
-  nothing. The e2e does not yet reach a branch corridor or a workstation room.
-- **Six of the ten piece kinds are gaps**: stairs, turns, layered intersections, ore deposits,
-  zombie-villager rooms, side-room dungeons.
-- **The terrain-driven surface tunnel** is not built (the shaft half of the entrance is).
-- **Biome decorations** (snow, lush, dripstone, cactus, dead bush, mushroom) are not placed: the
-  piece context has neither a biome nor configured features.
-- **Minecarts, chests, furnaces and barrels** are not added (their payloads are unverified).
-- **Vanilla mineshafts still generate** beside this mod's (upstream turns them off with a mixin;
-  the SDK has no equivalent hook).
+## Not yet ported
 
-## Layout
+- **The in-game leg passes — what it does *not* yet cover.** The three legs are green (below), but
+- **Biome decorations:** `addBiomeDecorations` (`BetterMineshaftPiece.java:175-240`) places
+- **Corridor legs (`edge`/`inner`):** `BigTunnel.generateLegsVariant1/2` (`BigTunnel.java:253-369`)
+- **Surface tunnel:** `VerticalEntrance.determineDirection` (`VerticalEntrance.java:300-361`)
+- **Six piece kinds:** stairs, turns, layered intersections 4/5, ore deposits, zombie-villager
+- **Minecarts, chests, furnaces, barrels:** not attempted in this slice. `PieceContext::entity` and
+- **A palette block outside `REQUESTED_BLOCKS`:** `Registrar::block_key`
+- **The config's NBT shape: measured in game, and read tolerantly.** `GenerationContext::config()`
+
+## Installing
+
+1. Install the [Horizon launcher](https://github.com/horizon-rust/horizon/releases) (0.2.70 or newer).
+2. Add `bettermineshafts.hmod` to the instance's mods.
+3. The package is pinned to a specific Horizon build; the launcher checks that pin.
+
+## Licence and credit
+
+YUNG's Better Mineshafts was created by its upstream authors; the code, models and assets in the original mod
+remain theirs and are used here under **LGPL-3.0-only**. The Rust in this repository is a clean-room
+rewrite for Horizon, not a translation of the original source.
+
+- `LICENSE` — the upstream licence text.
+- `LICENSE-NOTICE.md` — what this port carries and where it came from.
+- The upstream project: https://github.com/YUNG-GANG/YUNGs-Better-Mineshafts
+
+## Technical details
 
 ```
-horizon-mod.toml    the manifest (id, version 0.2.0, api 0.2, [native] pins)
-Cargo.toml          the crate (depends on the fetched SDK's horizon-mod-api)
-src/lib.rs          the one #[mod_api::horizon_mod] impl Hooks
-src/runtime.rs      the pure layout logic and its tests (no mod_api type)
-src/pieces.rs       the four piece writers, the palette resolver, save/load
-src/support.rs      the structure type, the config reader, the command
-assets/, data/      the carried content, at the package root (SDK layout)
-bettermineshafts.hmod   the built package
-content/            the carry evidence only (report, inventory, other namespace's tag)
-patches/inventory.json  the inventory the carry tool reads
-tools/              check.sh · carry_proof.py · e2e.sh · carry.sh · restore_jar_fields.py · verify_content.py
-FINDINGS.md         jar inventory, the generator's behaviour, the piece list
-notes.md            licence, what this slice does, gaps, verification, next slice
-LICENSE             the jar's own LGPL-3.0 text
-LICENSE-NOTICE.md   where the licence was read from
+horizon-mod.toml   package manifest (id, version, api, [native] pin)
+Cargo.toml         the crate; depends on `horizon-mod-api` from the fetched SDK
+src/               lib.rs (the one `impl Hooks`), runtime.rs (pure logic + tests), glue
+assets/ data/      the content the package ships
+tools/             content generators and the e2e scenario
 ```
 
-## Verify
+- Build: `cargo horizon-mod build` (packages; it does not compile against the game).
+- Test: `cargo test`, `cargo clippy --all-targets -- -D warnings`.
+- In-game: `ports/tools/launcher-game.sh run bettermineshafts` in the campaign tree, or install the
+  `.hmod` and play; the harness scenario is `tools/e2e.sh`.
 
-```sh
-ports/tools/build-slot.sh run --job bms-port --port ports/bettermineshafts \
-    --step build -- ports/bettermineshafts/tools/check.sh   # tests, clippy, fmt, build, check, fits, carry proof
-python3 tools/verify_content.py                             # the carried data vs the jar
-ports/tools/launcher-game.sh build bettermineshafts          # after any src/ change
-ports/tools/launcher-game.sh run bettermineshafts            # the in-game scenario (PASS + E2E EXIT:0)
-python3 ports/tools/check-e2e-logs.py bettermineshafts-e2e --strict
-```
-
-## Licence
-
-LGPL-3.0-only, rank 1: publishable under the same licence with this complete corresponding source
-and the original copyright notice. `LICENSE` is the jar's own file; `LICENSE-NOTICE.md` records
-where it was read from. Local use only until publication is approved (ARCHITECTURE.md §8).
+This repository is generated from the campaign's port at `ports/bettermineshafts/`; the port's own
+`notes.md` is the full record (decisions, traps, evidence).
