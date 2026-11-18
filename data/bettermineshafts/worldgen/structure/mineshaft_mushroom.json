@@ -1,0 +1,110 @@
+{
+  "type": "bettermineshafts:mineshaft",
+  "biomes": "#bettermineshafts:has_structure/better_mineshaft_mushroom",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "config": {
+    "blockStateRandomizers": {
+      "brickRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:red_mushroom_block"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:red_mushroom_block"
+            },
+            "probability": 0.333
+          },
+          {
+            "blockState": {
+              "id": "minecraft:brown_mushroom_block"
+            },
+            "probability": 0.333
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mushroom_stem"
+            },
+            "probability": 0.333
+          }
+        ]
+      },
+      "floorRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:mycelium"
+        },
+        "entries": []
+      },
+      "legRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:mushroom_stem"
+        },
+        "entries": []
+      },
+      "mainRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:red_mushroom_block"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:red_mushroom_block"
+            },
+            "probability": 0.333
+          },
+          {
+            "blockState": {
+              "id": "minecraft:brown_mushroom_block"
+            },
+            "probability": 0.333
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mushroom_stem"
+            },
+            "probability": 0.333
+          }
+        ]
+      }
+    },
+    "blockStates": {
+      "gravelBlockState": {
+        "id": "minecraft:gravel"
+      },
+      "mainBlockState": {
+        "id": "minecraft:red_mushroom_block"
+      },
+      "slabBlockState": {
+        "id": "minecraft:brown_mushroom_block"
+      },
+      "smallLegBlockState": {
+        "id": "minecraft:mushroom_stem"
+      },
+      "stoneSlabBlockState": {
+        "id": "minecraft:red_mushroom_block"
+      },
+      "stoneWallBlockState": {
+        "id": "minecraft:red_mushroom_block"
+      },
+      "supportBlockState": {
+        "id": "minecraft:mushroom_stem"
+      },
+      "trapdoorBlockState": {
+        "id": "minecraft:oak_trapdoor"
+      }
+    },
+    "decorationChances": {
+      "cactusChance": 0,
+      "deadBushChance": 0,
+      "dripstoneDecorations": false,
+      "gravelPileChance": 0.1,
+      "lushDecorations": false,
+      "mushroomChance": 0.4,
+      "snowChance": 0,
+      "vineChance": 0.1
+    },
+    "legVariant": "inner",
+    "replacementRate": 0.95
+  }
+}

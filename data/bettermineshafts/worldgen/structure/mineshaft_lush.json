@@ -1,0 +1,117 @@
+{
+  "type": "bettermineshafts:mineshaft",
+  "biomes": "#bettermineshafts:has_structure/better_mineshaft_lush",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "config": {
+    "blockStateRandomizers": {
+      "brickRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:oak_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:moss_block"
+            },
+            "probability": 0.75
+          },
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.15
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.05
+          }
+        ]
+      },
+      "floorRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:oak_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:moss_block"
+            },
+            "probability": 0.75
+          }
+        ]
+      },
+      "legRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:stripped_oak_log"
+        },
+        "entries": []
+      },
+      "mainRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:oak_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:moss_block"
+            },
+            "probability": 0.7
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cave_air"
+            },
+            "probability": 0.15
+          }
+        ]
+      }
+    },
+    "blockStates": {
+      "gravelBlockState": {
+        "id": "minecraft:gravel"
+      },
+      "mainBlockState": {
+        "id": "minecraft:oak_planks"
+      },
+      "slabBlockState": {
+        "id": "minecraft:oak_slab"
+      },
+      "smallLegBlockState": {
+        "id": "minecraft:stripped_oak_log"
+      },
+      "stoneSlabBlockState": {
+        "id": "minecraft:mossy_cobblestone_slab"
+      },
+      "stoneWallBlockState": {
+        "id": "minecraft:mossy_cobblestone_wall"
+      },
+      "supportBlockState": {
+        "id": "minecraft:oak_fence"
+      },
+      "trapdoorBlockState": {
+        "id": "minecraft:oak_trapdoor"
+      }
+    },
+    "decorationChances": {
+      "cactusChance": 0,
+      "deadBushChance": 0,
+      "dripstoneDecorations": false,
+      "gravelPileChance": 0.1,
+      "lushDecorations": true,
+      "mushroomChance": 0,
+      "snowChance": 0,
+      "vineChance": 0
+    },
+    "legVariant": "edge",
+    "replacementRate": 0.95
+  }
+}
