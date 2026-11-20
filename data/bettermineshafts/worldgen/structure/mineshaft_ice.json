@@ -1,0 +1,118 @@
+{
+  "type": "bettermineshafts:mineshaft",
+  "biomes": "#bettermineshafts:has_structure/better_mineshaft_ice",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "config": {
+    "blockStateRandomizers": {
+      "brickRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:packed_ice"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:blue_ice"
+            },
+            "probability": 0.5
+          }
+        ]
+      },
+      "floorRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:packed_ice"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:snow_block"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:blue_ice"
+            },
+            "probability": 0.2
+          }
+        ]
+      },
+      "legRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:packed_ice"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:blue_ice"
+            },
+            "probability": 0.5
+          }
+        ]
+      },
+      "mainRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:packed_ice"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:snow_block"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:blue_ice"
+            },
+            "probability": 0.4
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cave_air"
+            },
+            "probability": 0.1
+          }
+        ]
+      }
+    },
+    "blockStates": {
+      "gravelBlockState": {
+        "id": "minecraft:snow_block"
+      },
+      "mainBlockState": {
+        "id": "minecraft:packed_ice"
+      },
+      "slabBlockState": {
+        "id": "minecraft:packed_ice"
+      },
+      "smallLegBlockState": {
+        "id": "minecraft:packed_ice"
+      },
+      "stoneSlabBlockState": {
+        "id": "minecraft:packed_ice"
+      },
+      "stoneWallBlockState": {
+        "id": "minecraft:packed_ice"
+      },
+      "supportBlockState": {
+        "id": "minecraft:packed_ice"
+      },
+      "trapdoorBlockState": {
+        "id": "minecraft:spruce_trapdoor"
+      }
+    },
+    "decorationChances": {
+      "cactusChance": 0,
+      "deadBushChance": 0,
+      "dripstoneDecorations": false,
+      "gravelPileChance": 0.1,
+      "lushDecorations": false,
+      "mushroomChance": 0,
+      "snowChance": 0,
+      "vineChance": 0
+    },
+    "legVariant": "inner",
+    "replacementRate": 0.95
+  }
+}

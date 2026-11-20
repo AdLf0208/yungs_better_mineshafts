@@ -1,0 +1,153 @@
+{
+  "type": "bettermineshafts:mineshaft",
+  "biomes": "#bettermineshafts:has_structure/better_mineshaft_acacia",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "config": {
+    "blockStateRandomizers": {
+      "brickRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:stone_bricks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.333
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.333
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.333
+          }
+        ]
+      },
+      "floorRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:acacia_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:cobblestone"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.1
+          }
+        ]
+      },
+      "legRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:stripped_acacia_log",
+          "properties": {
+            "axis": "y"
+          }
+        },
+        "entries": []
+      },
+      "mainRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:acacia_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:cobblestone"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cave_air"
+            },
+            "probability": 0.2
+          }
+        ]
+      }
+    },
+    "blockStates": {
+      "gravelBlockState": {
+        "id": "minecraft:gravel"
+      },
+      "mainBlockState": {
+        "id": "minecraft:acacia_planks"
+      },
+      "slabBlockState": {
+        "id": "minecraft:acacia_slab"
+      },
+      "smallLegBlockState": {
+        "id": "minecraft:stripped_acacia_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "stoneSlabBlockState": {
+        "id": "minecraft:stone_brick_slab"
+      },
+      "stoneWallBlockState": {
+        "id": "minecraft:stone_brick_wall"
+      },
+      "supportBlockState": {
+        "id": "minecraft:acacia_fence"
+      },
+      "trapdoorBlockState": {
+        "id": "minecraft:acacia_trapdoor"
+      }
+    },
+    "decorationChances": {
+      "cactusChance": 0,
+      "deadBushChance": 0,
+      "dripstoneDecorations": false,
+      "gravelPileChance": 0.1,
+      "lushDecorations": false,
+      "mushroomChance": 0,
+      "snowChance": 0,
+      "vineChance": 0.1
+    },
+    "legVariant": "edge",
+    "replacementRate": 0.6
+  }
+}

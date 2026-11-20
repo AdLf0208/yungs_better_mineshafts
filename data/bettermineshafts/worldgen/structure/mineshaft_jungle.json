@@ -1,0 +1,171 @@
+{
+  "type": "bettermineshafts:mineshaft",
+  "biomes": "#bettermineshafts:has_structure/better_mineshaft_jungle",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "config": {
+    "blockStateRandomizers": {
+      "brickRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:stone_bricks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.25
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.25
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.25
+          },
+          {
+            "blockState": {
+              "id": "minecraft:chiseled_stone_bricks"
+            },
+            "probability": 0.25
+          }
+        ]
+      },
+      "floorRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:jungle_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:mossy_cobblestone"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.2
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "id": "minecraft:chiseled_stone_bricks"
+            },
+            "probability": 0.05
+          }
+        ]
+      },
+      "legRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:stripped_jungle_log",
+          "properties": {
+            "axis": "y"
+          }
+        },
+        "entries": []
+      },
+      "mainRandomizer": {
+        "defaultBlockState": {
+          "id": "minecraft:jungle_planks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "id": "minecraft:mossy_cobblestone"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "id": "minecraft:stone_bricks"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "id": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.2
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cracked_stone_bricks"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "id": "minecraft:chiseled_stone_bricks"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "id": "minecraft:cave_air"
+            },
+            "probability": 0.2
+          }
+        ]
+      }
+    },
+    "blockStates": {
+      "gravelBlockState": {
+        "id": "minecraft:gravel"
+      },
+      "mainBlockState": {
+        "id": "minecraft:jungle_planks"
+      },
+      "slabBlockState": {
+        "id": "minecraft:jungle_slab"
+      },
+      "smallLegBlockState": {
+        "id": "minecraft:stripped_jungle_log",
+        "properties": {
+          "axis": "y"
+        }
+      },
+      "stoneSlabBlockState": {
+        "id": "minecraft:cobblestone_slab"
+      },
+      "stoneWallBlockState": {
+        "id": "minecraft:cobblestone_wall"
+      },
+      "supportBlockState": {
+        "id": "minecraft:jungle_fence"
+      },
+      "trapdoorBlockState": {
+        "id": "minecraft:jungle_trapdoor"
+      }
+    },
+    "decorationChances": {
+      "cactusChance": 0,
+      "deadBushChance": 0,
+      "dripstoneDecorations": false,
+      "gravelPileChance": 0.1,
+      "lushDecorations": false,
+      "mushroomChance": 0,
+      "snowChance": 0,
+      "vineChance": 0.5
+    },
+    "legVariant": "edge",
+    "replacementRate": 0.6
+  }
+}
